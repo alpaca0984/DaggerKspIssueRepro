@@ -1,0 +1,22 @@
+[versions]
+androidGradlePlugin = "8.1.2"
+kotlin = "1.9.10"
+ksp = "1.9.10-1.0.13"
+dagger = "2.49"
+compose-compiler = "1.5.3"
+
+[libraries]
+dagger = { group = "com.google.dagger", name = "dagger-android", version.ref = "dagger" }
+dagger-support = { group = "com.google.dagger", name = "dagger-android-support", version.ref = "dagger" }
+dagger-processor = { group = "com.google.dagger", name = "dagger-android-processor", version.ref = "dagger" }
+dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
+
+[bundles]
+dagger-android = ["dagger", "dagger-support"]
+dagger-processor = ["dagger-compiler", "dagger-processor"]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
