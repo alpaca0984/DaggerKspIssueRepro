@@ -1,14 +1,14 @@
 package dev.alpaca0984.daggerkspissuerepro.di
 
 import dagger.Component
-import dagger.android.support.AndroidSupportInjectionModule
+import dagger.android.AndroidInjectionModule
 import dev.alpaca0984.daggerkspissuerepro.MainActivity
 
 val activityComponent: ActivityComponent = DaggerActivityComponent.builder().build()
 
 @Component(
     modules = [
-        AndroidSupportInjectionModule::class,
+        AndroidInjectionModule::class,
         FragmentModule::class,
     ]
 )
